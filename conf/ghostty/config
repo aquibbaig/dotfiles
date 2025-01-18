@@ -1,0 +1,6 @@
+font-size = 16
+cursor-style = block
+cursor-style-blink = true
+background-opacity = 0.97
+shell-integration-features = no-cursor
+
