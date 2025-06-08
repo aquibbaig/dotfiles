@@ -1,0 +1,6 @@
+# nushell
+dot_config/nushell/history.txt
+dot_config/nushell/plugin.msgpackz
+dot_config/nushell/vendor/*
+dot_config/nushell/vendor/**
+**/*.msgpackz

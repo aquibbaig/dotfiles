@@ -1,0 +1,23 @@
+0000000000000000000000000000000000000000 833941606b62187d27c0290ae40b47147107ee4e Aquib Baig <aquibbaig97@gmail.com> 1747769665 +0530	branch: Created from HEAD
+833941606b62187d27c0290ae40b47147107ee4e 95867fa74bf5719f7689c69629973dc91aeb130a Aquib Baig <aquibbaig97@gmail.com> 1747769675 +0530	commit: bufferline
+95867fa74bf5719f7689c69629973dc91aeb130a 4eac0689615b5b1eea3493e87cbdf6f0ee3c36ae Aquib Baig <aquibbaig97@gmail.com> 1747854184 +0530	commit: treewalker
+4eac0689615b5b1eea3493e87cbdf6f0ee3c36ae 7b0f9a89150c343acc5880573e8e5797afd26890 Aquib Baig <aquibbaig97@gmail.com> 1747856281 +0530	commit: conform, lualine, theme
+7b0f9a89150c343acc5880573e8e5797afd26890 8460f1e616c0935cba9762ed0d9153cf43cd6eb9 Aquib Baig <aquibbaig97@gmail.com> 1747856321 +0530	commit (amend): conform, lualine, theme
+8460f1e616c0935cba9762ed0d9153cf43cd6eb9 6cc8f015c3c3908634fa35027a0cf6f168d07acb Aquib Baig <aquibbaig97@gmail.com> 1748086426 +0530	commit: neotree
+6cc8f015c3c3908634fa35027a0cf6f168d07acb ce4a2e1fccd5b144f7df30eb0cf585c8ca517dff Aquib Baig <aquibbaig97@gmail.com> 1748086795 +0530	commit: outline
+ce4a2e1fccd5b144f7df30eb0cf585c8ca517dff f2a359fa95f19f4bee0a8b595b961e47b96385e4 Aquib Baig <aquibbaig97@gmail.com> 1748198775 +0530	commit: completion plugins
+f2a359fa95f19f4bee0a8b595b961e47b96385e4 1c896cf345ff1a2b4ab617a2d6a3411852c5de55 Aquib Baig <aquibbaig97@gmail.com> 1748199650 +0530	commit: auto open neotree
+1c896cf345ff1a2b4ab617a2d6a3411852c5de55 cc453059d11b1f54f02701bda9cbb2581faee500 Aquib Baig <aquibbaig97@gmail.com> 1748200079 +0530	commit (amend): auto open neotree
+cc453059d11b1f54f02701bda9cbb2581faee500 26c0109055ff5f5ae110ca2294cd1092ccfe086e Aquib Baig <aquibbaig97@gmail.com> 1748200086 +0530	commit: hardtime
+26c0109055ff5f5ae110ca2294cd1092ccfe086e 594ad611f5930c77aea40233f19c9b9889fd84e8 Aquib Baig <aquibbaig97@gmail.com> 1748203325 +0530	commit: toggle gitlens on
+594ad611f5930c77aea40233f19c9b9889fd84e8 5e04d7a960fe539ad003ba0742ad55e324c882bb Aquib Baig <aquibbaig97@gmail.com> 1748204995 +0530	commit: snacks
+5e04d7a960fe539ad003ba0742ad55e324c882bb 405156b558d47c59b6989bac901da1fd8839df36 Aquib Baig <aquibbaig97@gmail.com> 1748294483 +0530	commit: trouble
+405156b558d47c59b6989bac901da1fd8839df36 865a220cb5e2997e35f7b3b51599e76254755b41 Aquib Baig <aquibbaig97@gmail.com> 1748294494 +0530	commit: focus on current buffer
+865a220cb5e2997e35f7b3b51599e76254755b41 f78a417dea5df22813e439c07060eb852074682f Aquib Baig <aquibbaig97@gmail.com> 1748295439 +0530	commit: add ts server
+f78a417dea5df22813e439c07060eb852074682f 7e0e59ccf8f26087479ca4ef8c0ec0d932e4ca66 Aquib Baig <aquibbaig97@gmail.com> 1748296002 +0530	commit: setup eslint
+7e0e59ccf8f26087479ca4ef8c0ec0d932e4ca66 fd8b9f9409b42709d86d9b8071132e3d720a21d7 Aquib Baig <aquibbaig97@gmail.com> 1748328768 +0530	commit: noice and screenkey
+fd8b9f9409b42709d86d9b8071132e3d720a21d7 c719323250ad7fc37e614ecd9f6c245145c997e6 Aquib Baig <aquibbaig97@gmail.com> 1748369421 +0530	commit: yazi
+c719323250ad7fc37e614ecd9f6c245145c997e6 63d59750010b6b36c06cb5aafd1dfa4fc0c0a1eb Aquib Baig <aquibbaig97@gmail.com> 1748369426 +0530	commit: ts tools
+63d59750010b6b36c06cb5aafd1dfa4fc0c0a1eb b100ae90f8282f9bf9dc43a011ef7634a88e1892 Aquib Baig <aquibbaig97@gmail.com> 1748791283 +0530	commit: update packages
+b100ae90f8282f9bf9dc43a011ef7634a88e1892 a0a0deefe9ad4d45d345a4e34acf9b40ede4c4ac Aquib Baig <aquibbaig97@gmail.com> 1749375944 +0530	commit: remove hardtime
+a0a0deefe9ad4d45d345a4e34acf9b40ede4c4ac a9e73cdc8724a3d52ff253f11cedb73f90dd6b66 Aquib Baig <aquibbaig97@gmail.com> 1749379221 +0530	commit: smear cursor
