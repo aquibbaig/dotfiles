@@ -52,6 +52,21 @@ git commit -m "update: config changes"
 git push origin main
 ```
 
+## ⏳ Dependencies
+- Install nushell
+ ```bash
+brew install nushell
+```
+
+- Install oh-my-posh
+ ```bash
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+```
+
+## ⚙️ Manual configuration
+For `nushell` to work, copy configuration from chezmoi to your nushell config root. I did not find a reliable way
+to update the config $PATH for nushell.
+
 ## 📁 Repo Structure
 
 ```
