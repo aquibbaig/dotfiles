@@ -54,6 +54,8 @@ bindkey "^H" backward-kill-word
 # ctrl J & K for going up and down in prev commands
 bindkey "^J" history-search-forward
 bindkey "^K" history-search-backward
+bindkey "^N" history-search-forward
+bindkey "^P" history-search-backward
 bindkey '^R' fzf-history-widget
 
 
@@ -108,3 +110,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

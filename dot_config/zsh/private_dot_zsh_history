@@ -1,0 +1,11 @@
+cp ~/.zshrc ~/.config/zsh/zshrc
+ls ~/.config/zsh/zshrc
+fzf
+clear
+brew install fzf
+clear
+vi ~/.zprofile
+vi ~/.zshrc
+vi ~/.config/zsh/zshrc
+nvim ~/.config/zsh/zshrc
+clear
