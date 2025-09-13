@@ -4,3 +4,8 @@ dot_config/nushell/plugin.msgpackz
 dot_config/nushell/vendor/*
 dot_config/nushell/vendor/**
 **/*.msgpackz
+
+# zsh
+dot_config/zsh/dot_zcompdump*
+dot_config/zsh/private_dot_zsh_history
+dot_config/zsh/private_dot_zsh_sessions/**
