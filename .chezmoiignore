@@ -9,3 +9,4 @@ dot_config/nushell/vendor/**
 dot_config/zsh/dot_zcompdump*
 dot_config/zsh/private_dot_zsh_history
 dot_config/zsh/private_dot_zsh_sessions/**
+/dot_git/

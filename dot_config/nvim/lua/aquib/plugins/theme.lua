@@ -64,10 +64,10 @@ return {
 						DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
 					}
 				end,
-				theme = "wave", -- Load "wave" theme
+				theme = "dragon", -- Load "wave" theme
 				background = { -- map the value of 'background' option to a theme
-					dark = "wave", -- try "dragon" !
-					light = "wave",
+					dark = "dragon", -- try "dragon" !
+					light = "dragon",
 				},
 			})
 
