@@ -53,3 +53,21 @@ vim.keymap.set("n", "<C-b>", "<Cmd>Neotree toggle<CR>")
 
 -- outline
 vim.keymap.set("n", "<C-o>", "<Cmd>Outline<CR>")
+
+-- ── TypeScript Tools ────────────────────────────────────────────────
+-- Add missing imports for TypeScript files
+vim.keymap.set("n", "<leader>ai", "<Cmd>TSToolsAddMissingImports<CR>", {
+	silent = true,
+	desc = "TypeScript: Add missing imports",
+})
+
+vim.keymap.set("n", "<leader>fal", "<Cmd>TSToolsFixAll<CR>", {
+	silent = true,
+	desc = "TypeScript: Fix all",
+})
+
+-- Organize imports for TypeScript files
+vim.keymap.set("n", "<leader>oi", "<Cmd>TSToolsOrganizeImports<CR>", {
+	silent = true,
+	desc = "TypeScript: Organize imports",
+})
