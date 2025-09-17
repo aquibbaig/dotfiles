@@ -77,3 +77,16 @@ vim.keymap.set("n", "<leader>gt", function() Snacks.terminal() end, {
   silent = true,
   desc = "Open terminal",
 })
+
+-- LSP mappings
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true, desc = "Go to definition" })
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { silent = true, desc = "Go to implementation" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { silent = true, desc = "Hover documentation" })
+vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, { silent = true, desc = "Workspace symbols" })
+vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, { silent = true, desc = "Show diagnostics" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { silent = true, desc = "Next diagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { silent = true, desc = "Previous diagnostic" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { silent = true, desc = "Code actions" })
+vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, { silent = true, desc = "Find references" })
+vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, { silent = true, desc = "Rename symbol" })
+vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, { silent = true, desc = "Signature help" })
