@@ -1,0 +1,134 @@
+-- -- JetBrains Plugin Development Support for Kotlin LSP
+-- -- This module enhances kotlin-language-server with IntelliJ Platform classpath support
+--
+local M = {}
+
+return {}
+--
+-- -- Function to get JetBrains/IntelliJ Platform classpath
+-- local function get_jetbrains_classpath()
+--   local root_dir = vim.fn.getcwd()
+--
+--   -- Check if this is a JetBrains plugin project
+--   if vim.fn.filereadable(root_dir .. "/build.gradle.kts") == 0 and
+--      vim.fn.filereadable(root_dir .. "/plugin.xml") == 0 then
+--     return {}
+--   end
+--
+--   -- Try to use gradlew if available
+--   local gradle_cmd = root_dir .. "/gradlew"
+--   if vim.fn.executable(gradle_cmd) == 0 then
+--     gradle_cmd = "gradle"
+--   end
+--
+--   -- Try to get classpath from Gradle
+--   local handle = io.popen(gradle_cmd .. " -q dependencies --configuration compileClasspath 2>/dev/null")
+--   if handle then
+--     local output = handle:read("*a")
+--     handle:close()
+--     if output and output ~= "" then
+--       -- Parse Gradle dependency output to find JARs
+--       local classpath_entries = {}
+--       local gradle_cache = os.getenv("HOME") .. "/.gradle/caches"
+--
+--       -- Common IntelliJ Platform JAR locations
+--       local jar_patterns = {
+--         gradle_cache .. "/modules-2/files-2.1/com.jetbrains.intellij.platform/**/**.jar",
+--         gradle_cache .. "/modules-2/files-2.1/org.jetbrains.kotlin/**/**.jar",
+--         gradle_cache .. "/modules-2/files-2.1/org.jetbrains/**/**.jar",
+--         root_dir .. "/build/idea-sandbox/plugins/**/**.jar",
+--         root_dir .. "/build/idea-sandbox/lib/**/**.jar"
+--       }
+--
+--       for _, pattern in ipairs(jar_patterns) do
+--         local files = vim.fn.glob(pattern, false, true)
+--         for _, file in ipairs(files) do
+--           table.insert(classpath_entries, file)
+--         end
+--       end
+--
+--       return classpath_entries
+--     end
+--   end
+--
+--   return {}
+-- end
+--
+-- -- Function to prepare IntelliJ Platform dependencies
+-- local function prepare_intellij_deps()
+--   local root_dir = vim.fn.getcwd()
+--   local gradle_cmd = root_dir .. "/gradlew"
+--   if vim.fn.executable(gradle_cmd) == 0 then
+--     gradle_cmd = "gradle"
+--   end
+--
+--   -- Run prepareSandbox to download and set up IntelliJ Platform
+--   vim.fn.system(gradle_cmd .. " prepareSandbox")
+-- end
+--
+-- -- Enhanced Kotlin LSP configuration for JetBrains plugin development
+-- function M.setup_kotlin_lsp(lspconfig, on_attach)
+--   -- Get JetBrains classpath for IntelliJ Platform projects
+--   local classpath_entries = get_jetbrains_classpath()
+--
+--   local setup_config = {
+--     on_attach = function(client, bufnr)
+--       -- Call the original on_attach function
+--       on_attach(client, bufnr)
+--
+--       -- Add JetBrains-specific functionality
+--       if #classpath_entries > 0 then
+--         print("Kotlin LSP configured with IntelliJ Platform classpath")
+--       end
+--     end,
+--     settings = {
+--       kotlin = {
+--         compiler = {
+--           jvm = {
+--             target = "21"
+--           }
+--         },
+--         indexing = {
+--           enabled = true
+--         },
+--         completion = {
+--           snippets = {
+--             enabled = true
+--           }
+--         },
+--         linting = {
+--           debounceTime = 250
+--         }
+--       }
+--     }
+--   }
+--
+--   -- Add classpath if this is a JetBrains plugin project
+--   if #classpath_entries > 0 then
+--     local classpath = table.concat(classpath_entries, ":")
+--     setup_config.cmd = { "kotlin-language-server", "--cp", classpath }
+--
+--     -- Prepare dependencies if not already done
+--     if not vim.g.intellij_deps_prepared then
+--       prepare_intellij_deps()
+--       vim.g.intellij_deps_prepared = true
+--     end
+--   end
+--
+--   lspconfig.kotlin_language_server.setup(setup_config)
+-- end
+--
+-- -- Auto-command to refresh LSP when build files change
+-- vim.api.nvim_create_autocmd({"BufWritePost"}, {
+--   pattern = {"build.gradle.kts", "build.gradle", "gradle.properties"},
+--   callback = function()
+--     vim.cmd('LspRestart kotlin_language_server')
+--   end
+-- })
+--
+-- -- Manual command to refresh Kotlin LSP
+-- vim.api.nvim_create_user_command('RefreshKotlinLSP', function()
+--   vim.cmd('LspRestart kotlin_language_server')
+-- end, {})
+--
+-- return M

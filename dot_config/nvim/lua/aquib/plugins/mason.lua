@@ -1,25 +1,9 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
+		cmd = "Mason",
 		config = function()
 			require("mason").setup()
-		end,
-	},
-
-	-- Install formatters/linters and optional LSPs
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		dependencies = { "williamboman/mason.nvim" },
-		config = function()
-			require("mason-tool-installer").setup({
-				ensure_installed = {
-					"eslint_d",
-					"prettierd",
-				},
-				auto_update = true,
-				run_on_start = true,
-			})
 		end,
 	},
 
@@ -27,13 +11,13 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "williamboman/mason.nvim" },
-		lazy = false,
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
 					"tailwindcss",
-					"ts_ls", -- Only list LSP servers here
+					"ts_ls",
 				},
 			})
 		end,
