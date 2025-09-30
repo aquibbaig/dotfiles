@@ -1,3 +1,7 @@
+-- QoL
+vim.keymap.set('n', 'gO', "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>")
+vim.keymap.set('n', 'go', "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>")
+
 -- ── Treewalker: Node Movement ────────────────────────────────────────────────
 -- Move to the syntactic node *above* the current one
 vim.keymap.set({ "n", "v" }, "<C-k>", "<cmd>Treewalker Up<cr>", {
