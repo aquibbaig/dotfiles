@@ -7,12 +7,13 @@ return {
 		"MunifTanjim/nui.nvim",
 		-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
-	lazy = false, -- neo-tree will lazily load itself
+	lazy = true, -- Load only when called explicitly
 	---@module "neo-tree"
 	---@type neotree.Config?
 	opts = {
 		-- fill any relevant options here
 		filesystem = {
+			hijack_netrw_behavior = "disabled",
 			follow_current_file = {
 				enabled = true, -- <- auto-focus the file in tree
 			},

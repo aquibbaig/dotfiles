@@ -1,6 +1,7 @@
 return {
 	{
 		"stevearc/oil.nvim",
+		lazy = false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
@@ -23,7 +24,7 @@ return {
 		},
 		config = function()
 			require("oil").setup({
-				default_file_explorer = false,
+				default_file_explorer = true,
 				delete_to_trash = true,
 				skip_confirms_for_simple_edits = true,
 				view_options = {
