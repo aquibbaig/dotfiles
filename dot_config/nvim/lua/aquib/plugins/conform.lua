@@ -13,8 +13,8 @@ return {
         -- Conform will run the first available formatter
         javascript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
         -- typescript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
-        typescript = { "biome", "biome-organize-imports" },
-        typescriptreact = { "biome", "biome-organize-imports" },
+        typescript = { "eslint_d", "biome", "biome-organize-imports" },
+        typescriptreact = { "eslint_d", "biome", "biome-organize-imports" },
       },
       format_on_save = {
         -- These options will be passed to conform.format()
