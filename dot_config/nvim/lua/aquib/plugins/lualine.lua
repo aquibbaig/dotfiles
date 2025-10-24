@@ -32,14 +32,17 @@ return {
               return " "
             end,
             color = function()
-              local status = require("sidekick.status").get()
-              if status then
-                return status.kind == "Error" and "DiagnosticError" or status.busy and "DiagnosticWarn" or "Special"
+              local ok, sidekick_status = pcall(require, "sidekick.status")
+              if ok then
+                local status = sidekick_status.get()
+                if status then
+                  return status.kind == "Error" and "DiagnosticError" or status.busy and "DiagnosticWarn" or "Special"
+                end
               end
             end,
             cond = function()
-              local status = require("sidekick.status")
-              return status.get() ~= nil
+              local ok, sidekick_status = pcall(require, "sidekick.status")
+              return ok and sidekick_status.get() ~= nil
             end,
           },
         },

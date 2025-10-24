@@ -12,7 +12,7 @@ return {
 		require("tailwind-tools").setup({
 
 			server = {
-				override = true, -- setup the server from the plugin if true
+				override = false, -- disable automatic server setup to avoid lspconfig deprecation warning
 				settings = { -- shortcut for `settings.tailwindCSS`
 					experimental = {
 						classRegex = { "tw\\('([^']*)'\\)" },

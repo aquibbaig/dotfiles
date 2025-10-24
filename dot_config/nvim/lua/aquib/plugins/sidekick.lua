@@ -2,6 +2,9 @@ return {
   "folke/sidekick.nvim",
   opts = {
     -- add any options here
+    nes = {
+      enabled = false, -- Disable Next Edit Suggestions to work with copilot.vim instead
+    },
     cli = {
       mux = {
         backend = "tmux",
@@ -10,17 +13,18 @@ return {
     },
   },
   keys = {
-    {
-      "<tab>",
-      function()
-        -- if there is a next edit, jump to it, otherwise apply it if any
-        if not require("sidekick").nes_jump_or_apply() then
-          return "<Tab>" -- fallback to normal tab
-        end
-      end,
-      expr = true,
-      desc = "Goto/Apply Next Edit Suggestion",
-    },
+    -- Tab mapping removed to allow copilot.vim to use it
+    -- {
+    --   "<tab>",
+    --   function()
+    --     -- if there is a next edit, jump to it, otherwise apply it if any
+    --     if not require("sidekick").nes_jump_or_apply() then
+    --       return "<Tab>" -- fallback to normal tab
+    --     end
+    --   end,
+    --   expr = true,
+    --   desc = "Goto/Apply Next Edit Suggestion",
+    -- },
     {
       "<c-.>",
       function()
