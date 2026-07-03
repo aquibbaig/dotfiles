@@ -57,6 +57,8 @@ bindkey "^K" history-search-backward
 bindkey "^N" history-search-forward
 bindkey "^P" history-search-backward
 bindkey '^R' fzf-history-widget
+bindkey '^[[Z' reverse-menu-complete
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 
 # open fff file manager with ctrl f
