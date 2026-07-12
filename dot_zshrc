@@ -1,5 +1,4 @@
 # Main interactive zsh config.
-# ~/.config/zsh/.zshrc is a symlink to this file.
 
 # XDG base directories
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
@@ -137,9 +136,9 @@ SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
 
 # Prompt
-NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{#2E3440}%F{#E5E9F0}$(date +%_I:%M%P) %K{#3b4252}%F{#ECEFF4} %n %K{#4c566a} %~ %f%k > "
-echo -e "${NEWLINE}\033[48;2;46;52;64;38;2;216;222;233m $0 \033[0m\033[48;2;59;66;82;38;2;216;222;233m $(uptime | sed 's/.*up \(.*\), [0-9]* user.*/\1/') \033[0m\033[48;2;76;86;106;38;2;216;222;233m $(uname -r) \033[0m"
+if command -v oh-my-posh >/dev/null 2>&1; then
+  eval "$(oh-my-posh init zsh --config /opt/homebrew/opt/oh-my-posh/themes/catppuccin_mocha.omp.json)"
+fi
 
 # zoxide
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
