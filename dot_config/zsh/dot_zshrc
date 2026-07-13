@@ -52,12 +52,16 @@ export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 
+# nvm
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+
 # PATH
 typeset -U path PATH
 path=(
   "$HOME/.local/bin"
   "$XDG_CONFIG_HOME/scripts"
   "$JAVA_HOME/bin"
+  "$NVM_DIR"/versions/node/v*/bin(NOn[1])
   "$PNPM_HOME"
   "$BUN_INSTALL/bin"
   "$GOBIN"
@@ -67,9 +71,7 @@ path=(
 )
 export PATH
 
-# nvm
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 
 # Google Cloud SDK
@@ -82,7 +84,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Downloads/coderabbit-firebase-admin
 # fzf
 export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 30% --preview='bat -p --color=always {}'"
 export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
-if command -v fzf >/dev/null 2>&1; then
+if [[ -t 0 && -t 1 ]] && command -v fzf >/dev/null 2>&1; then
   source <(fzf --zsh)
 fi
 
@@ -97,7 +99,9 @@ export LESS_TERMCAP_ue="$(printf '%b' '')"
 
 # Completion and plugins
 zmodload zsh/complist
-[[ -r /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]] && source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+if [[ -t 0 && -t 1 && -r /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
+  source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 zstyle ':autocomplete:*' delay 0.15
 zstyle ':autocomplete:*' timeout 0.3
 zstyle ':autocomplete:*' min-input 2
