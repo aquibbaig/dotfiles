@@ -67,7 +67,15 @@ path=(
   "$GOBIN"
   "$HOME/go/bin"
   "$XDG_DATA_HOME/go/bin"
-  $path
+  "$HOME/.cargo/bin"
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
+  /usr/local/bin
+  /System/Cryptexes/App/usr/bin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
 )
 export PATH
 
