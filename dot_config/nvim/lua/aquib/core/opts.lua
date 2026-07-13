@@ -25,6 +25,7 @@ opt.smartcase = true  -- if you include mixed case in your search, assumes you w
 opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
+opt.guifont = "CommitMono:h14"
 
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)

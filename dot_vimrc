@@ -1,0 +1,19 @@
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', { 'dir': '~/opt/fzf' }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+if exists('&guifont')
+  set guifont=CommitMono:h14
+endif
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+:command NE NERDTree
+
+set rtp+=/usr/local/opt/fzf

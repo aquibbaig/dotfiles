@@ -1,4 +1,4 @@
-font-family = "Iosevka"
+font-family = "CommitMono"
 font-size = 14
 theme = GruvboxDarkHard
 shell-integration-features = no-cursor,sudo,no-title
