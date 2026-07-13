@@ -118,7 +118,12 @@ autoload -U tetris
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33
+zstyle ':completion:*' list-colors \
+  'di=38;2;137;180;250' \
+  'ln=38;2;203;166;247' \
+  'ex=38;2;166;227;161' \
+  'fi=38;2;205;214;244' \
+  'ma=38;2;250;179;135;1'
 zstyle ':completion:*' squeeze-slashes false
 
 bindkey '^[[Z' reverse-menu-complete
