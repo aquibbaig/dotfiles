@@ -107,12 +107,6 @@ export LESS_TERMCAP_ue="$(printf '%b' '')"
 
 # Completion and plugins
 zmodload zsh/complist
-if [[ -t 0 && -t 1 && -r /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
-  source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-fi
-zstyle ':autocomplete:*' delay 0.15
-zstyle ':autocomplete:*' timeout 0.3
-zstyle ':autocomplete:*' min-input 2
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 zstyle ':omz:update' mode disabled
@@ -160,6 +154,17 @@ command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 
 # Kiro shell integration
 [[ "$TERM_PROGRAM" == "kiro" ]] && command -v kiro >/dev/null 2>&1 && source "$(kiro --locate-shell-integration-path zsh)"
+
+# Fast inline suggestions. Keep full completion on Tab.
+if [[ -t 0 && -t 1 && -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  ZSH_AUTOSUGGEST_STRATEGY=(history)
+  ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=80
+  ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c80,)"
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c7086"
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
 # Syntax highlighting should load after other widgets/plugins.
 [[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
