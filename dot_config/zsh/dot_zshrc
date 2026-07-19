@@ -8,6 +8,7 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # Default programs
 export EDITOR="nvim"
+alias vim="nvim"
 export TERMINAL="ghostty"
 export MUSPLAYER="rmpc"
 export BROWSER="firefox"
