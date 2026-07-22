@@ -60,11 +60,20 @@ return {
 
 		vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { noremap = true, silent = true })
 
+		local function cycle_buffer(key, command)
+			if vim.bo.buftype == "terminal" then
+				vim.cmd.startinsert()
+				vim.api.nvim_feedkeys(vim.keycode(key), "n", false)
+			else
+				vim.cmd(command)
+			end
+		end
+
 		-- Switch to next buffer
-		vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
+		vim.keymap.set("n", "<Tab>", function() cycle_buffer("<Tab>", "BufferLineCycleNext") end, { desc = "Next Buffer" })
 
 		-- Switch to previous buffer
-		vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
+		vim.keymap.set("n", "<S-Tab>", function() cycle_buffer("<S-Tab>", "BufferLineCyclePrev") end, { desc = "Previous Buffer" })
 
 		-- Move current buffer position left in bufferline
 		vim.keymap.set("n", "<leader><", "<cmd>BufferLineMovePrev<CR>", { desc = "Move Buffer Left" })
