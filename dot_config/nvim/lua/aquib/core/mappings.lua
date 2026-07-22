@@ -82,6 +82,11 @@ vim.keymap.set("n", "<leader>gt", function() Snacks.terminal() end, {
   desc = "Open terminal",
 })
 
+vim.keymap.set("n", "<leader>gg", function() Snacks.lazygit() end, {
+  silent = true,
+  desc = "Open Lazygit",
+})
+
 -- LSP mappings
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true, desc = "Go to definition" })
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { silent = true, desc = "Go to implementation" })
