@@ -1,4 +1,4 @@
-[".local/share/skills"]
+["Desktop/code/skills"]
     type = "git-repo"
     url = "git@github.com:aquibbaig/skills.git"
     refreshPeriod = "168h"
